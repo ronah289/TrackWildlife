@@ -1,0 +1,62 @@
+{{#partial "content"}}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                {{#if locations}}
+                    {{#each locations as |location|}}
+                        <div class="entries">
+                            <p class="text" id={{location.id}}>{{location.name}}</p><br>
+                            <a href="/view/location/sightings/{{location.id}}"><button class="btn btn-primary">Check
+                                Sightings</button></a>
+                            <a href="/view/location/delete/{{location.id}}"><button class="btn btn-danger">Delete This Location</button></a>
+                        </div>
+                        <hr><br>
+                    {{/each}}
+
+                {{else}}
+                    <p class="text display-5">No Locations. Create <a href="/create/location">HERE</a></p>
+                {{/if}}
+            </div>
+            {{#if sightings}}
+            <div class="col-md-5">
+
+                <div class="card text-white bg-info">
+                    <div class="card-body">
+                        <h1 class="card-title">Sightings</h1>
+                        <hr>
+                        <div class="col-md-4">
+                            <h3>Time</h3>
+                            <hr>
+                            {{#each sightings as |sighting|}}
+                                <li class="card-text ">{{sighting.time}}</li>
+                            {{/each}}
+
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Animal</h3>
+                            <hr>
+                            {{#each animals as |animal|}}
+                                <li class="card-text ">{{animal}}</li>
+                            {{/each}}
+
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Type</h3>
+                            <hr>
+                            {{#each types as |type|}}
+                                <li class="card-text ">{{type}}</li>
+                            {{/each}}
+
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                <h3>No Sightings Here</h3>
+            {{/if}}
+
+        </div>
+        </div>
+    </div>
+
+{{/partial}}
+{{> layout.hbs}}
