@@ -8,25 +8,31 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-<div>HOME</div>
+
+<div id="nav">
+<div class="dropdown" id="home"><button><a href="/">HOME</a></button></div>
+
 <div class="dropdown">
-    <button>Create</button>
-    <div class="dropdown-content">
+    <button class="dropdown-button">CREATE</button>
+    <div class="dropdown-list">
         <a href="/create/animal">Animal</a>
         <a href="/create/ranger">Ranger</a>
         <a href="/create/sighting">Sighting</a>
         <a href="/create/location">Location</a>
     </div>
 </div>
+
 <div class="dropdown">
-    <button>View</button>
-    <div class="dropdown-content">
+    <button class="dropdown-button">VIEW</button>
+    <div class="dropdown-list">
         <a href="/view/animals">Animal</a>
         <a href="/view/rangers">Ranger</a>
         <a href="/view/sightings">Sighting</a>
         <a href="/view/location">Location</a>
     </div>
 </div>
+</div>
+<hr>
 
 <!--begin main template-->
 
