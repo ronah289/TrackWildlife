@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Track Wildlife{{/block}}</title>
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+
+<div id="nav">
+<div class="dropdown" id="home"><button><a href="/">HOME</a></button></div>
+
+<div class="dropdown">
+    <button class="dropdown-button">CREATE</button>
+    <div class="dropdown-list">
+        <a href="/create/animal">Animal</a>
+        <a href="/create/ranger">Ranger</a>
+        <a href="/create/sighting">Sighting</a>
+        <a href="/create/location">Location</a>
+    </div>
+</div>
+
+<div class="dropdown">
+    <button class="dropdown-button">VIEW</button>
+    <div class="dropdown-list">
+        <a href="/view/animals">Animal</a>
+        <a href="/view/rangers">Ranger</a>
+        <a href="/view/sightings">Sighting</a>
+        <a href="/view/location">Location</a>
+    </div>
+</div>
+</div>
+<hr>
+
+<!--begin main template-->
+
+<div class="main-content">
+    {{#block "content"}}
+    {{/block}}
+
+</div>
+
+<!--end main template-->
+{{#block "footer"}}
+    </body>
+    </html>
+{{/block}}

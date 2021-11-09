@@ -1,0 +1,21 @@
+{{#partial "content"}}
+    <div class="form">
+        <form action="/create/ranger/new" method="post">
+            <h1>Create Ranger</h1>
+            <hr>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control form-control-md" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="staff_number">Staff Number</label>
+                <input type="text" class="form-control form-control-md" id="staff_number" name="staff_number" placeholder="staff Number Here"required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg">Submit Details</button>
+            </div>
+        </form>
+    </div>
+
+{{/partial}}
+{{> layout.hbs}}
