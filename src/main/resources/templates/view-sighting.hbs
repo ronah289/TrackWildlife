@@ -3,13 +3,13 @@
         <h1>Sightings</h1>
         <hr>
 
-        <div class="row">
+        <div class="row" id="sightings">
             {{#if sightings}}
                 <div class="col-md-3">
                     <h3>Time</h3>
                     <hr>
                     {{#each sightings as |sighting|}}
-                        <h3>{{sighting.time}}</h3>
+                        <h3 id="sighting-time">{{time}}</h3>
                     {{/each}}
                 </div>
                 <div class="col-md-3">

@@ -1,8 +1,8 @@
 {{#partial "content"}}
-    <div class="views animals">
+    <div id="animals">
         {{#if animals}}
             {{#each animals as |animal|}}
-                <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                <div class="card text-white bg-dark mb-2" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">{{animal.name}}</h5>
                         <p class="card-text">{{animal.type}}</p>

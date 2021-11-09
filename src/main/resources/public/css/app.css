@@ -78,3 +78,15 @@ form button{
     background-color:aqua;
     color:black;
 }
+#animals{
+margin:4.5px;
+}
+#sighting-time{
+background-color:white;
+color:black;
+}
+#sightings{
+color:black;
+font-weight:900;
+margin:5.4px;
+}
