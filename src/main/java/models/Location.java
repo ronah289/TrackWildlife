@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class Location {
     private int id;
-    private  String name;
+    private final String name;
 
     public Location(String name) {
         this.name = name;
@@ -71,7 +71,7 @@ public class Location {
             List<Integer> sightings_ids = con.createQuery(sql)
                     .addParameter("location_id",this.getId())
                     .executeAndFetch(Integer.class);
-            List<Sightings> sightings = new ArrayList<Sightings>();
+            List<Sightings> sightings = new ArrayList<>();
 
             for(Integer sighting_id:sightings_ids){
                 String sightingsQuery = "SELECT * FROM sightings WHERE id=:sighting_id";

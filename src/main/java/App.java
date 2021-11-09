@@ -10,6 +10,7 @@ import java.util.Map;
 import static spark.Spark.*;
 
 
+@SuppressWarnings("ALL")
 public class App {
     static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
@@ -25,13 +26,13 @@ public class App {
         staticFileLocation("/public");
 
         get("/",(request, response) -> {
-            Map<String,Object> model = new HashMap<String, Object>();
+            Map<String,Object> model = new HashMap<>();
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
 
         //create a location
         get("/create/location",(request, response) -> {
-            Map<String,Object> model = new HashMap<String, Object>();
+            Map<String,Object> model = new HashMap<>();
             return new ModelAndView(model,"create-location.hbs");
         },new HandlebarsTemplateEngine());
 

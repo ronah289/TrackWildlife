@@ -15,7 +15,6 @@ public class Sightings {
     private final int ranger_id;
     private final int animal_id;
     private final int location_id;
-    private final AtomicReference<Date> date = new AtomicReference<>(new Date());
     private final Timestamp time;
 
 
@@ -23,6 +22,7 @@ public class Sightings {
         this.ranger_id = ranger_id;
         this.animal_id = animal_id;
         this.location_id = location_id;
+        AtomicReference<Date> date = new AtomicReference<>(new Date());
         this.time = new Timestamp(date.get().getTime());
     }
 
@@ -40,10 +40,6 @@ public class Sightings {
 
     public int getAnimal_id() {
         return animal_id;
-    }
-
-    public Timestamp getTime() {
-        return time;
     }
 
     public static List<Sightings> all(){

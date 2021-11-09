@@ -55,6 +55,7 @@ public class Animals implements DatabaseManagement {
         return age;
     }
 
+    @SuppressWarnings("ThrowablePrintedToSystemOut")
     public void save(){
         if(this.name.equals("")||this.type.equals("")||this.name.equals(null)||this.type.equals(null)){
             throw new IllegalArgumentException("Fill All Entries");
@@ -79,7 +80,7 @@ public class Animals implements DatabaseManagement {
             if (type.equals("")) {
                 throw new IllegalArgumentException("Fill All Entries");
             }
-            if (type == "endangered") {
+            if (type.equals("endangered")) {
                 if (health.equals("") || age.equals("")) {
                     throw new IllegalArgumentException("Fill All Entries");
                 }
@@ -110,11 +111,10 @@ public class Animals implements DatabaseManagement {
     public static Animals find(int id){
         try (Connection con = DB.sql2o.open()){
             String sql = "SELECT * FROM animals WHERE id = :id";
-            Animals animal =  con.createQuery(sql)
+            return con.createQuery(sql)
                     .addParameter("id",id)
                     .throwOnMappingFailure(false)
                     .executeAndFetchFirst(Animals.class);
-            return animal;
 
         }
 
