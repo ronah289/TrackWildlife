@@ -4,8 +4,8 @@ import org.sql2o.Connection;
 
 public class EndangeredAnimals extends Animals implements DatabaseManagement {
 
-    private String health;
-    private String age;
+    private final String health;
+    private final String age;
     public static final String HEALTH_HEALTHY = "healthy";
     public static final String HEALTH_ILL = "ill";
     public static final String HEALTH_OKAY = "okay";

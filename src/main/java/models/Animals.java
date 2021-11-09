@@ -7,6 +7,7 @@ import java.util.Objects;
 import org.sql2o.Connection;
 import org.sql2o.Sql2oException;
 
+@SuppressWarnings("unused")
 public class Animals implements DatabaseManagement {
     public int id;
     public String name;
