@@ -3,6 +3,7 @@ package models;
 import org.junit.Rule;
 import org.junit.jupiter.api.Test;
 
+import static models.Location.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LocationTest {
@@ -26,14 +27,14 @@ class LocationTest {
         Location location2 = new Location("location2");
         location.save();
         location2.save();
-        assertNotNull(Location.all().size());
+        assertNotNull(all().size());
     }
     @Test
     public void locationDeleted_true(){
         Location location = createNewLocation();
         location.save();
         location.deleteOneLocation();
-        assertNull(Location.find(location.getId()));
+        assertNull(find(location.getId()));
     }
     @SuppressWarnings("ThrowablePrintedToSystemOut")
     @Test

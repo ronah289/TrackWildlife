@@ -27,7 +27,7 @@ class SightingsTest {
         Sightings testSighting = createNewSighting();
         testSighting.save();
         testSighting.deleteOneSighting();
-        assertEquals(null,Animals.find(testSighting.getId()));
+        assertNull(Animals.find(testSighting.getId()));
     }
     @Test
     public void deleteAllSightingsWorksAsExpected_true(){
@@ -49,7 +49,7 @@ class SightingsTest {
     public void getAnimalIdReturnCorrectResult_true(){
         Sightings sighting = createNewSighting();
         sighting.save();
-        assertTrue(3 == sighting.getAnimal_id());
+        assertEquals(3, sighting.getAnimal_id());
     }
 
 }

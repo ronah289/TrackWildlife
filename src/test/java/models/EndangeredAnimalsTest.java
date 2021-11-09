@@ -33,10 +33,11 @@ class EndangeredAnimalsTest {
         EndangeredAnimals testAnimal = createEndangeredAnimal();
         testAnimal.save();
         testAnimal.deleteOneEntry();
-        assertEquals(null,Animals.find(testAnimal.getId()));
+        assertNull(Animals.find(testAnimal.getId()));
 
     }
 
+    @SuppressWarnings("ThrowablePrintedToSystemOut")
     @Test
     public void ensureNameFieldCannotBeEmpty(){
         EndangeredAnimals endangeredAnimal = new EndangeredAnimals("","","","");
@@ -53,8 +54,9 @@ class EndangeredAnimalsTest {
         EndangeredAnimals endangeredAnimal = createEndangeredAnimal();
         endangeredAnimal.save();
         Animals foundAnimal = Animals.find(endangeredAnimal.getId());
-        assertTrue(foundAnimal.getHealth().equals(endangeredAnimal.getHealth()));
+        assertEquals(foundAnimal.getHealth(), endangeredAnimal.getHealth());
     }
+    @SuppressWarnings("ThrowablePrintedToSystemOut")
     @Test
     public void nonEmptyFieldsForNewEndangeredAnimal_true(){
         Animals testAnimal = new EndangeredAnimals("","","","");

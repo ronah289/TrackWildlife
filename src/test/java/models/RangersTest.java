@@ -33,6 +33,7 @@ class RangersTest {
             ranger1.save();
         }
         catch (IllegalArgumentException error){
+            //noinspection ThrowablePrintedToSystemOut
             System.out.println(error);
         }
     }
