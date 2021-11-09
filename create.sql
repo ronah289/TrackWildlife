@@ -1,4 +1,4 @@
-CREATE DATABASE wildlife_tracker
+CREATE DATABASE wildlife_tracker;
 \connect wildlife_tracker
 CREATE TABLE animals (
     id integer NOT NULL,
